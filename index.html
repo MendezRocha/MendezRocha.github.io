@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Repara tus máquinas de coser industrial | Comunidad y Diagnóstico</title>
+  <meta name="description" content="Canal y comunidad para reparar máquinas de coser industrial. Publica preguntas, quejas y recibe ayuda con un asistente guiado de diagnóstico." />
+  <meta name="theme-color" content="#1f2937" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="badge">Canal técnico de costura industrial</p>
+        <h1>Repara tus máquinas de coser industrial</h1>
+        <p class="lead">Tu centro de información para diagnóstico, mantenimiento y solución de fallas en máquinas industriales. Aprende con videos y resuelve dudas en comunidad.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="https://www.youtube.com/@Reparatusmaquinasdecoser" target="_blank" rel="noopener">Ir al canal de YouTube</a>
+          <a class="btn" href="#comunidad">Ir a Comunidad</a>
+          <a class="btn" href="#asistente">Usar Asistente IA</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>¿Qué encuentras aquí?</h3>
+        <ul>
+          <li>✅ Guías rápidas de reparación</li>
+          <li>✅ Mantenimiento preventivo</li>
+          <li>✅ Fallas comunes y solución</li>
+          <li>✅ Comunidad para preguntas y quejas</li>
+          <li>✅ Asistente guiado de diagnóstico</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="info">
+      <div class="container">
+        <h2>Panel de información</h2>
+        <div class="cards three">
+          <article class="card">
+            <h3>Diagnóstico rápido</h3>
+            <p>Identifica si el problema es tensión, aguja, sincronización, motor, banda o lubricación.</p>
+          </article>
+          <article class="card">
+            <h3>Mantenimiento</h3>
+            <p>Checklist diario, semanal y mensual para alargar la vida de tu máquina industrial.</p>
+          </article>
+          <article class="card">
+            <h3>Seguridad técnica</h3>
+            <p>Buenas prácticas para evitar daños en piezas, agujas rotas y accidentes en taller.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="videos">
+      <div class="container">
+        <div class="section-head">
+          <h2>Videos del canal</h2>
+          <a class="text-link" href="https://www.youtube.com/@Reparatusmaquinasdecoser" target="_blank" rel="noopener">Ver todo en YouTube →</a>
+        </div>
+        <div class="embed-wrap">
+          <iframe
+            src="https://www.youtube.com/embed?listType=user_uploads&list=Reparatusmaquinasdecoser"
+            title="Videos de Repara tus máquinas de coser"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </div>
+        <p class="muted">Si el reproductor no carga por configuración de YouTube, usa el botón “Ver todo en YouTube”.</p>
+      </div>
+    </section>
+
+    <section class="section" id="comunidad">
+      <div class="container">
+        <h2>Comunidad: preguntas, quejas y soluciones</h2>
+        <p class="muted">Publica tu caso. Tus posts se guardan en este navegador (modo local). Si luego quieres, lo conectamos a backend real.</p>
+
+        <form id="postForm" class="card form">
+          <div class="grid two">
+            <label>
+              Nombre
+              <input type="text" id="nombre" placeholder="Ej. Juan Taller" required>
+            </label>
+            <label>
+              Tipo de publicación
+              <select id="tipo" required>
+                <option value="Pregunta">Pregunta</option>
+                <option value="Queja">Queja</option>
+                <option value="Aporte">Aporte</option>
+              </select>
+            </label>
+          </div>
+          <label>
+            Marca / Modelo (opcional)
+            <input type="text" id="modelo" placeholder="Ej. Juki DDL-8700">
+          </label>
+          <label>
+            Tu mensaje
+            <textarea id="mensaje" rows="4" placeholder="Describe la falla o situación..." required></textarea>
+          </label>
+          <button class="btn primary" type="submit">Publicar en comunidad</button>
+        </form>
+
+        <div class="posts-head">
+          <h3>Publicaciones recientes</h3>
+          <button class="btn danger" id="clearPosts" type="button">Borrar todas (local)</button>
+        </div>
+        <div id="posts" class="cards"></div>
+      </div>
+    </section>
+
+    <section class="section alt" id="asistente">
+      <div class="container">
+        <h2>Asistente IA guiado (diagnóstico inicial)</h2>
+        <p class="muted">Este asistente usa lógica de diagnóstico para orientarte paso a paso.</p>
+
+        <div class="card form">
+          <label>
+            ¿Qué problema tienes?
+            <select id="problema">
+              <option value="">Selecciona un síntoma...</option>
+              <option value="salta_puntadas">Salta puntadas</option>
+              <option value="rompe_hilo">Rompe hilo</option>
+              <option value="no_arrastra">No arrastra la tela</option>
+              <option value="ruido">Hace ruido excesivo</option>
+              <option value="no_enciende">No enciende / motor falla</option>
+              <option value="aceite">Fuga o falta de aceite</option>
+            </select>
+          </label>
+          <button class="btn primary" id="diagnosticar" type="button">Obtener diagnóstico</button>
+          <div id="resultadoIA" class="result" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p><strong>Repara tus máquinas de coser industrial</strong> · Comunidad técnica para talleres y operadores.</p>
+      <p>
+        YouTube: <a href="https://www.youtube.com/@Reparatusmaquinasdecoser" target="_blank" rel="noopener">@Reparatusmaquinasdecoser</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
